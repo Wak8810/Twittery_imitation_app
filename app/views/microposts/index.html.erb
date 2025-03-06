@@ -1,0 +1,11 @@
+<% provide(:title, 'All posts') %>
+<h1>All posts</h1>
+<%= link_to "New Post", new_micropost_path, class: "btn btn-lg btn-primary" %>
+
+<ul class="post">
+  <% @microposts.each do |post| %>
+    <li>
+      <%= post.content %>
+    </li>
+  <% end %>
+</ul>

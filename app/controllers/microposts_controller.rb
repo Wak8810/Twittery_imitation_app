@@ -1,5 +1,9 @@
 class MicropostsController < ApplicationController
 
+  def show
+    @micropost = Micropost.find(params[:id])
+  end
+
   def index 
     @microposts = Micropost.all
   end
@@ -16,6 +20,18 @@ class MicropostsController < ApplicationController
       flash[:danger] = "No Content"
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def edit
+    
+  end
+
+  def update
+    
+  end
+
+  def destroy
+    
   end
 
   private

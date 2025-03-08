@@ -1,0 +1,86 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column; 
+}
+
+.post-row {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  flex-wrap: wrap; /* 折り返しを有効化 */
+}
+
+.post {
+  border:2px solid #c0c0c0;
+  border-radius: 10px;
+  margin-top:10px;
+  padding: 10px 10px 10px 20px;
+  width: 100%;
+}
+
+.edit-delete {
+  margin-top: 10px;           /* 上の余白 */
+  text-align: left;          /* 右寄せ */
+}
+
+.edit-delete a {
+  margin-left: 10px;         /* リンクの間にスペース */
+}
+
+/* header */
+
+#logo {
+  float: left;
+  font-size: 1.8em;
+  color: #e9ecf5;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #e9ecf5;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+/* forms */
+
+input, textarea {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  /*@include box_sizing;*/
+}

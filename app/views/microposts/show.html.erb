@@ -1,0 +1,14 @@
+<% provide(:title, @micropost.content) %>
+<div class ="post-container">
+  <div class = "post-row">
+      <div class = "post">
+        <p><%= @micropost.content %></p>
+        <p><%= link_to "詳細", @micropost %></p>
+      </div>
+  </div>
+</div>
+
+<div class = "edit-delete">
+  <%= link_to "編集", @micropost %>
+  <%= link_to "削除", @micropost %>
+</div>

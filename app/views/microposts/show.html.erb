@@ -9,6 +9,8 @@
 </div>
 
 <div class = "edit-delete">
-  <%= link_to "編集", @micropost %>
-  <%= link_to "削除", @micropost %>
+  <%= link_to "編集", edit_micropost_path(@micropost) %>
+  <%= link_to "削除", @micropost, class:"delete-button",
+                                  data: { "turbo-method": :delete,
+                                  turbo_confirm: "このポストを削除しますか？" } %>
 </div>

@@ -17,10 +17,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 .posts-container {
@@ -43,12 +42,19 @@ textarea {
 }
 
 .edit-delete {
-  margin-top: 10px;           /* 上の余白 */
-  text-align: left;          /* 右寄せ */
+  margin-top: 10px; 
+  margin-left:20px;     
+  text-align: left; /*左寄せ*/      
+  a {
+    margin-left: 10px; /* リンクの間にスペース */
+  }
 }
 
-.edit-delete a {
-  margin-left: 10px;         /* リンクの間にスペース */
+.delete-button{
+  color:red;
+  &:hover{
+    color:red;
+  }
 }
 
 /* header */
@@ -60,11 +66,10 @@ textarea {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-}
-
-#logo:hover {
-  color: #e9ecf5;
-  text-decoration: none;
+  &:hover {
+    color: #e9ecf5;
+    text-decoration: none;
+  }
 }
 
 /* footer */
@@ -78,9 +83,21 @@ footer {
 
 /* forms */
 
-input, textarea {
-  border: 1px solid #bbb;
+/*submitボタンの中央揃えをするため*/
+.text-center{
+  text-align:center;
+}
+
+input {
+  display: block;
+  margin: 0 auto; /* 横方向の中央揃え */
+  width: 35%;
+  padding: 10px 20px;
+}
+
+textarea{
+  resize: none;
+  border-radius: 5px;
   width: 100%;
-  margin-bottom: 15px;
-  /*@include box_sizing;*/
+  height: 90px;
 }

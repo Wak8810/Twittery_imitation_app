@@ -1,12 +1,9 @@
 <% provide(:title, 'New Post') %>
+<% provide(:button_text, 'Create New Post') %>
+<% provide(:title_text,'今何してる？')%>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @micropost) do |f| %>
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-
-      <%= f.submit "Create New Post", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'microposts/micropost' %>
   </div>
 </div>

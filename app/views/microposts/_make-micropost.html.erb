@@ -1,7 +1,7 @@
 <%= form_with(model: @micropost) do |f| %>
   <h2><%= yield(:title_text)%></h2>
   <%= f.text_area :content ,placeholder: "今何してる？"%>
-  <div class = "text-center">
+  <div class = "center">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
 <% end %>

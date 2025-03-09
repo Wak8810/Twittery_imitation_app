@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
   end
 
   def index 
-    @microposts = Micropost.order(id: :desc) #降順で並び替える
+    @microposts = Micropost.order(updated_at: :desc) #降順で並び替える
   end
 
   def new
@@ -15,12 +15,13 @@ class MicropostsController < ApplicationController
   def create
     @micropost = Micropost.new(micropost_params)
     if @micropost.save
-      redirect_to microposts_path
+      flash[:success] = "投稿しました"
+      redirect_to root_path
     else
-      if @micropost.content.length <= 0
-        flash[:danger] = "内容がありません"
-      elsif @micropost.content.length > 140
+      if @micropost.content.length > 140
         flash[:danger] = "140文字を超えています"
+      else
+        flash[:danger] = "内容がありません"
       end
       render 'new', status: :unprocessable_entity
     end
@@ -33,18 +34,22 @@ class MicropostsController < ApplicationController
   def update
     @micropost = Micropost.find(params[:id])
     if @micropost.update(micropost_params)
-      flash[:success] = "Post Updated"
-      redirect_to microposts_path
+      flash[:success] = "更新しました"
+      redirect_to root_path
     else
-      flash[:danger] = "140文字を超えています！"
+      if @micropost.content.length > 140
+        flash[:danger] = "140文字を超えています"
+      else
+        flash[:danger] = "内容がありません"
+      end
       render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @micropost = Micropost.find(params[:id]).destroy
-    flash[:success] = "Post deleted"
-    redirect_to root_url, status: :see_other
+    flash[:success] = "削除しました"
+    redirect_to root_path, status: :see_other
   end
 
   private

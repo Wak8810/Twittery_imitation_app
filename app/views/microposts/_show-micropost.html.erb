@@ -1,0 +1,7 @@
+<p><%= post.content %></p>
+<div class="same-line">
+  <%= link_to "詳細", micropost_path(post.id) %>
+  <div class = "time">
+    最終更新 <%= post.updated_at.in_time_zone("Tokyo") %> <!--- 日本時間 --->
+  </div>
+</div>

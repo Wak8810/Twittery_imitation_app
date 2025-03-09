@@ -2,8 +2,7 @@
 <div class ="post-container">
   <div class = "post-row">
       <div class = "post">
-        <p><%= @micropost.content %></p>
-        <p><%= link_to "詳細", @micropost %></p>
+        <%= render "microposts/show-micropost", post:@micropost %>
       </div>
   </div>
 </div>
